@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- 扫描service相关的bean -->
+    <context:component-scan base-package="com.gvssimux.service" />
+    <!--这里不能导入dao层 不知道为什么会报错，能查询到 ，但是放到服务器上就不行了-->
+    <!-- <import resource="Spring-dao.xml"/> -->
+    <!--BookServiceImpl注入到IOC容器中-->
+    <bean id="BookServiceImpl" class="com.gvssimux.service.BookInfServiceImpl">
+        <property name="mapper" ref="bookInfDao"/>
+    </bean>
+    <bean id="BorrowServiceImpl" class="com.gvssimux.service.BorrowServiceImpl">
+        <property name="mapper" ref="borrowDao"/>
+    </bean>
+    <bean id="UserServiceImpl" class="com.gvssimux.service.UserServiceImpl">
+        <property name="mapper" ref="userDao"/>
+    </bean>
+    <bean id="UserWantServiceImpl" class="com.gvssimux.service.UserWantServiceImpl">
+        <property name="mapper" ref="userWantDao"/>
+    </bean>
+    <bean id="CommentServiceImpl" class="com.gvssimux.service.CommentServiceImpl">
+        <property name="mapper" ref="commentDao"/>
+    </bean>
+
+
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+
+
+</beans>
