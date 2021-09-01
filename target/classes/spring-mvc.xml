@@ -10,7 +10,7 @@
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--1.注解驱动-->
-    <mvc:annotation-driven/>
+    <!--<mvc:annotation-driven/>-->
     <!--springmvc 统一解决json中文乱码问题-->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
@@ -37,7 +37,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-<!--    &lt;!&ndash;拦截器配置&ndash;&gt;-->
+    <!--拦截器配置-->
 <!--    <mvc:interceptors>-->
 <!--        <mvc:interceptor>-->
 <!--            &lt;!&ndash;/**包括这个请求下面的所有请求 &ndash;&gt;-->

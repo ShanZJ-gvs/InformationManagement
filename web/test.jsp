@@ -15,33 +15,6 @@
     <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <script>
-
-        function checkUserPwd(){
-            $.post({
-                url:"${pageContext.request.contextPath}/checkUserPwd",
-                data:{"pwd":$("#pwd").val(),"username":$("#username").val()},
-                success:function (data) {
-
-                    if (data.toString()=="UserPwdError"){
-                        $("#info").css("color","red");
-                        $("#info").html("用户名或密码错误");
-                        console.log(data);
-                        //alert(222);
-                    };
-                    if (data.toString()=="UserPwdOK"){
-                        // document.getElementById("loginButton").setAttribute("type","submit");
-                        $("#info").html("");
-                        console.log(data);
-                        //alert(111);
-                        $(window).attr("location","${pageContext.request.contextPath}/tohome");
-                    };
-                }
-            })
-
-        }
-
-    </script>
 
 </head>
 <body>
