@@ -67,7 +67,7 @@
                         $("#info").html("");
                         console.log(data);
                         //alert(111);
-                        $(window).attr("location","${pageContext.request.contextPath}/j1");
+                        $(window).attr("location","${pageContext.request.contextPath}/tohome");
                     };
                 }
             })
@@ -112,7 +112,7 @@
             </div>--%>
             <span id="info"></span>
             <button id="loginButton" class="btn btn-primary border rounded submit-button" type="button" onclick="checkUserPwd()">登录</button>
-            <a class="btn btn-primary border rounded submit-button" role="button" href="${pageContext.request.contextPath}/j1">注册</a>
+            <a class="btn btn-primary border rounded submit-button" role="button" href="${pageContext.request.contextPath}/toregister">注册</a>
         </form>
 
 
