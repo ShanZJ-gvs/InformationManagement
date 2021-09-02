@@ -17,6 +17,9 @@
     <bean id="FangchanServiceImpl" class="com.gvssimux.service.FangchanServiceImpl">
         <property name="mapper" ref="fangchanDao"/>
     </bean>
+    <bean id="UserLoginServiceImpl" class="com.gvssimux.service.UserLoginServiceImpl">
+        <property name="mapper" ref="userLoginDao"/>
+    </bean>
 
 
 

@@ -14,33 +14,22 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="text/javascript">
+        //编写一个JavaScript
+        var user = {
+            name:"shanzj",
+            age:18,
+            sex:"男"
+        };
 
-    <script>
+        //将js对象转换为json对象
+        var json = JSON.stringify(user);
 
-        function checkUserPwd(){
-            $.post({
-                url:"${pageContext.request.contextPath}/checkUserPwd",
-                data:{"pwd":$("#pwd").val(),"username":$("#username").val()},
-                success:function (data) {
+        console.log(json);
 
-                    if (data.toString()=="UserPwdError"){
-                        $("#info").css("color","red");
-                        $("#info").html("用户名或密码错误");
-                        console.log(data);
-                        //alert(222);
-                    };
-                    if (data.toString()=="UserPwdOK"){
-                        // document.getElementById("loginButton").setAttribute("type","submit");
-                        $("#info").html("");
-                        console.log(data);
-                        //alert(111);
-                        $(window).attr("location","${pageContext.request.contextPath}/tohome");
-                    };
-                }
-            })
-
-        }
-
+        //将 json 对象转换为 JavaScript对象
+        var obj = JSON.parse(json);
+        console.log(obj);
     </script>
 
 </head>
