@@ -31,71 +31,63 @@ public class PageJumpController {
 
 
     /**
-     * 跳转页面
+     * 跳转页面form-wizards.html
      */
-    @RequestMapping("/tobookinf")
-    public String toBookInf(Model model)throws JsonProcessingException{
+    @RequestMapping("/toformwizards")
+    public String toformWizards(Model model)throws JsonProcessingException{
 
-        return "bookinf";
+        return "form-wizards";
     }
 
     /**
-     * 跳转页面
+     * 跳转页面form-wizard.html
      */
-    @RequestMapping("/toborrow")
-    public String toBorrow()throws JsonProcessingException{
+    @RequestMapping("/toformwizard")
+    public String toformWizard(Model model)throws JsonProcessingException{
 
-        return "borrow";
+        return "form-wizard";
     }
 
 
 
     /**
-     * 点击登录按钮后跳转到home页面
+     * 跳转到home页面
      */
     @RequestMapping("/tohome")
     public String tohome()throws JsonProcessingException{
 
-        return "/home";
+        return "home";
     }
 
     /**
-     * 点击注册按钮跳转到注册页面
+     * 跳转到datas.html
      */
-    @RequestMapping("/toregister")
-    public String toRegister()throws JsonProcessingException{
+    @RequestMapping("/todatas")
+    public String toDatas()throws JsonProcessingException{
 
-        return "register";
-    }
-
-
-    /**
-     * 跳转页面
-     */
-    @RequestMapping("/tomessage")
-    public String toMessage()throws JsonProcessingException{
-
-        return "message";
-    }
-
-    /**
-     * 跳转页面
-     */
-    @RequestMapping("/touser")
-    public String toUser()throws JsonProcessingException{
-
-        return "user";
+        return "datas";
     }
 
 
     /**
-     * 跳转页面
+     * 跳转页面auth-login.html
      */
-    @RequestMapping("/touserwant")
-    public String toUserWant()throws JsonProcessingException{
+    @RequestMapping("/toauthlogin")
+    public String toAuthLogin()throws JsonProcessingException{
 
-        return "userwant";
+        return "auth-login";
     }
+
+    /**
+     * 跳转页面search
+     */
+    @RequestMapping("/tosearch")
+    public String toSearch()throws JsonProcessingException{
+
+        return "search";
+    }
+
+
 
 
 }
