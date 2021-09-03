@@ -5,14 +5,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PageJumpController {
 
     /**
-     * 跳转页面
+     * 跳转页面 下载文件的请求
      */
-    @RequestMapping("/to1")
+    @RequestMapping("/a1")
     public String toExportexcel(Model model)throws JsonProcessingException{
 
         return "exportexcel";
@@ -21,12 +22,13 @@ public class PageJumpController {
 
 
     /**
-     * 跳转页面
+     * 跳转页面 上传文件的请求
      */
-    @RequestMapping("/to2")
+    @RequestMapping("/a2")
     public String toLeadingexcel(Model model)throws JsonProcessingException{
 
         return "leadingexcel";
+
     }
 
 

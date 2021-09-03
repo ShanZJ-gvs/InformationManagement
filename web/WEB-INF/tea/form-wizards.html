@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   
-   <title>茶叶溯源管理后台 </title> 
+   <title>纪检协查管理后台 </title>
 
   <link rel="stylesheet" href="assets1/css/style.css" />
 </head>
@@ -20,7 +20,7 @@
         <button type="button" class="menu-toggler la la-bars" data-toggle="menu"></button>
 
         <!-- Brand -->
-        <span class="brand">茶叶溯源管理后台</span>
+        <span class="brand">纪检协查管理后台</span>
 
         <!-- Search -->
         <form class="hidden md:block ml-10" action="#">
@@ -105,7 +105,7 @@
 
         <!-- Breadcrumb -->
         <section class="breadcrumb" >
-            <h1>生产数据上链</h1>
+            <h1>房产数据上链</h1>
            
         </section>
 
@@ -117,9 +117,9 @@
                 <div class="card mt-5 p-5">
                     <div class="tabs wizard">
                         <nav class="tab-nav">
-                            <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-1">茶园<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
-                            <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-2">采摘<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
-                            <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-3">制茶<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
+                            <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-1">房产<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
+                            <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-2">车辆<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
+                            <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-3">收藏品<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
                             <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-4">定级<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
                             <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-5">包装<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
                             <a href="#" class="h5 active" data-toggle="tab" data-target="#tab-6">质检<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a>
@@ -127,32 +127,52 @@
                         </nav>
                         <div class="tab-content mt-5">
                             <div class="collapse open" id="tab-1">
-                                <form>
-                                   
+                                <form id="fanchanform" action="./fanchanform" method="post">
                                     <div class="mb-5">
-                                        <label class="label block mb-2" for="email-2">茶园编号</label>
-                                        <input type="text" class="form-control" id="email-2"
+                                        <label class="label block mb-2" for="email-2">所有人</label>
+                                        <input type="text" class="form-control" name="uname" id="email-2"
                                             placeholder="">
                                     </div>
                                     <div class="mb-5">
-                                        <label class="label block mb-2" for="email-2">茶树区块号</label>
-                                        <input type="text" class="form-control" id="email-2"
+                                        <label class="label block mb-2" for="email-2">身份证</label>
+                                        <input type="text" class="form-control" name="uuid" id="email-2"
+                                               placeholder="">
+                                    </div>
+                                    <div class="mb-5">
+                                        <label class="label block mb-2" for="email-2">房产名</label>
+                                        <input type="text" class="form-control" name="fname" id="email-2"
                                             placeholder="">
                                     </div>
                                     <div class="mb-5">
-                                        <label class="label block mb-2" for="email-2">茶树护养情况</label>
-                                        <input type="text" class="form-control" id="email-2"
+                                        <label class="label block mb-2" for="email-2">房产地址</label>
+                                        <input type="text" class="form-control" name="faddress" id="email-2"
                                             placeholder="">
                                     </div>
                                     <div class="mb-5">
-                                        <label class="label block mb-2" for="email-2">茶树生长环境</label>
-                                        <input type="text" class="form-control" id="email-2"
+                                        <label class="label block mb-2" for="email-2">建筑面积</label>
+                                        <input type="text" class="form-control" name="farea1" id="email-2" value="">
+                                    </div>
+                                    <div class="mb-5">
+                                        <label class="label block mb-2" for="email-2">使用面积</label>
+                                        <input type="text" class="form-control" name="farea2" id="email-2"
                                             placeholder="">
                                     </div>
                                     <div class="mb-5">
-                                        <label class="label block mb-2" for="password-2">密码</label>
-                                        <input type="password" class="form-control" id="password-2" value="">
+                                        <label class="label block mb-2" for="email-2">估值</label>
+                                        <input type="text" class="form-control" name="fcost" id="email-2" value="">
                                     </div>
+                                    <div class="mb-5">
+                                        <label class="label block mb-2" for="email-2">是否贷款</label>
+                                        <input type="button" class="form-control" name="isloans0" id="email-2" value="000">
+                                        <input type="button" class="form-control" name="isloans1" id="email-2" value="111">
+                                    </div>
+                                    <div class="mb-5">
+                                        <label class="label block mb-2" for="email-2">是否付清</label>
+                                        <input type="button" class="form-control" name="ispay0" id="email-2" value="000">
+                                        <input type="button" class="form-control" name="ispay1" id="email-2" value="111">
+                                    </div>
+                                    <button type="submit" class="btn btn_primary uppercase">提交111</button>
+
                                 </form>
                             </div>
                             <div class="collapse" id="tab-2">
@@ -427,7 +447,7 @@
         <!-- Footer  -->
         <footer class="flex mt-auto">
             <div class="footer">
-                <span class='uppercase'>&copy; 2021 茶叶溯源管理后台</span>
+                <span class='uppercase'>&copy; 2021 纪检协查管理后台</span>
                 <nav class="ml-auto">
                     <a href="">支持</a>
                     <span class="divider mx-2">|</span>

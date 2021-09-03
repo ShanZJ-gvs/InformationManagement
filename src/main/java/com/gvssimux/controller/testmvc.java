@@ -14,7 +14,7 @@ public class testmvc {
 
 
 
-    @RequestMapping("/j1")//页面跳转
+    @RequestMapping("/test2")//页面跳转
     public String json01() throws JsonProcessingException {
 
         return "tiaozhuantest";
@@ -22,7 +22,7 @@ public class testmvc {
 
     //通过产权人查房产
     @ResponseBody  //使之不会走视图解析器，会直接返回一个字符串
-    @RequestMapping("/t1")
+    @RequestMapping("/test1")
     public String tt3() {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserServiceImpl mapper = context.getBean("UserServiceImpl", UserServiceImpl.class);

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gvssimux.dao.FangchanDao">
+  <resultMap id="BaseResultMap" type="com.gvssimux.pojo.Fangchan">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fid" jdbcType="VARCHAR" property="fid" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="fname" jdbcType="VARCHAR" property="fname" />
+    <result column="faddress" jdbcType="VARCHAR" property="faddress" />
+    <result column="ispay" jdbcType="INTEGER" property="ispay" />
+    <result column="isloans" jdbcType="INTEGER" property="isloans" />
+    <result column="fcost" jdbcType="DOUBLE" property="fcost" />
+    <result column="farea1" jdbcType="DOUBLE" property="farea1" />
+    <result column="farea2" jdbcType="DOUBLE" property="farea2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, fid, `uid`, fname, faddress, ispay, isloans, fcost, farea1, farea2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from fangchan
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from fangchan
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gvssimux.pojo.Fangchan" useGeneratedKeys="true">
+    insert into fangchan (fid, `uid`, fname, 
+      faddress, ispay, isloans, 
+      fcost, farea1, farea2)
+    values (#{fid,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, 
+      #{faddress,jdbcType=VARCHAR}, #{ispay,jdbcType=INTEGER}, #{isloans,jdbcType=INTEGER}, 
+      #{fcost,jdbcType=DOUBLE}, #{farea1,jdbcType=DOUBLE}, #{farea2,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gvssimux.pojo.Fangchan" useGeneratedKeys="true">
+    insert into jijianxiecha.fangchan
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="uid != null">
+        `uid`,
+      </if>
+      <if test="fname != null">
+        fname,
+      </if>
+      <if test="faddress != null">
+        faddress,
+      </if>
+      <if test="ispay != null">
+        ispay,
+      </if>
+      <if test="isloans != null">
+        isloans,
+      </if>
+      <if test="fcost != null">
+        fcost,
+      </if>
+      <if test="farea1 != null">
+        farea1,
+      </if>
+      <if test="farea2 != null">
+        farea2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fid != null">
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null">
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="faddress != null">
+        #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ispay != null">
+        #{ispay,jdbcType=INTEGER},
+      </if>
+      <if test="isloans != null">
+        #{isloans,jdbcType=INTEGER},
+      </if>
+      <if test="fcost != null">
+        #{fcost,jdbcType=DOUBLE},
+      </if>
+      <if test="farea1 != null">
+        #{farea1,jdbcType=DOUBLE},
+      </if>
+      <if test="farea2 != null">
+        #{farea2,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gvssimux.pojo.Fangchan">
+    update fangchan
+    <set>
+      <if test="fid != null">
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        `uid` = #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null">
+        fname = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="faddress != null">
+        faddress = #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ispay != null">
+        ispay = #{ispay,jdbcType=INTEGER},
+      </if>
+      <if test="isloans != null">
+        isloans = #{isloans,jdbcType=INTEGER},
+      </if>
+      <if test="fcost != null">
+        fcost = #{fcost,jdbcType=DOUBLE},
+      </if>
+      <if test="farea1 != null">
+        farea1 = #{farea1,jdbcType=DOUBLE},
+      </if>
+      <if test="farea2 != null">
+        farea2 = #{farea2,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gvssimux.pojo.Fangchan">
+    update fangchan
+    set fid = #{fid,jdbcType=VARCHAR},
+      `uid` = #{uid,jdbcType=VARCHAR},
+      fname = #{fname,jdbcType=VARCHAR},
+      faddress = #{faddress,jdbcType=VARCHAR},
+      ispay = #{ispay,jdbcType=INTEGER},
+      isloans = #{isloans,jdbcType=INTEGER},
+      fcost = #{fcost,jdbcType=DOUBLE},
+      farea1 = #{farea1,jdbcType=DOUBLE},
+      farea2 = #{farea2,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -8,6 +8,19 @@ import java.util.List;
 
 
 public interface FangchanDao {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Fangchan record);
+
+    //部分插入
+    int insertSelective(Fangchan record);
+
+    Fangchan selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(Fangchan record);
+
+    int updateByPrimaryKey(Fangchan record);
+
 
     //单个查询
     @Select("select * from jijianxiecha.fangchan where fid=#{c}")

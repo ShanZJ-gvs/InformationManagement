@@ -36,10 +36,26 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/tea/"/>
         <property name="suffix" value=".html"/>
+        <!--优先级越小，优先级越高-->
+        <property name="order" value="2" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <!-- 这个属性指定了，只有controller返回的路径是以excel开头时，才使用该视图解析器-->
+        <property name="viewNames" value="leadingexcel"/>
+        <!--优先级越小，优先级越高-->
+        <property name="order" value="1" />
     </bean>
 
 
-<!--    -->
+
+
+
+
+
+<!--文件上传配置-->
     <bean id="multipartResolver"   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 设置上传文件的最大尺寸为10MB -->
         <property name="maxUploadSize">

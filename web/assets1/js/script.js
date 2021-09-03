@@ -1155,7 +1155,7 @@ if (typeof Chart !== "undefined") {
             pointBorderWidth: 4,
             pointHoverRadius: 2,
             fill: false,
-            data: [1250, 1300, 1550, 900, 1800, 1100, 1600],
+            data: [1000, 1300, 1550, 9000, 1800, 1100, 1600],
           },
         ],
       },
@@ -1198,7 +1198,7 @@ if (typeof Chart !== "undefined") {
       type: "lineWithLine",
       plugins: [lineWithLinePlugin],
       data: {
-        labels: ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期天"],
+        labels: ["星期", "星期二", "星期三", "星期四", "星期五", "星期六", "星期天"],
         datasets: [
           {
             label: "待处理订单",
@@ -1226,7 +1226,7 @@ if (typeof Chart !== "undefined") {
       type: "lineWithLine",
       plugins: [lineWithLinePlugin],
       data: {
-        labels: ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期天"],
+        labels: ["星期", "星期", "星期三", "星期四", "星期五", "星期六", "星期天"],
         datasets: [
           {
             label: "发货订单",
@@ -1256,7 +1256,7 @@ if (typeof Chart !== "undefined") {
 
       // The data for our dataset
       data: {
-        labels: ["一月", "二月", "三月", "四月", "五月", "六月"],
+        labels: ["七月", "二月", "三月", "四月", "五月", "六月"],
         datasets: [
           {
             backgroundColor: "rgba(" + colors.primary + ", .1)",
@@ -1270,7 +1270,7 @@ if (typeof Chart !== "undefined") {
             pointBorderWidth: 2,
             pointHoverRadius: 6,
             pointHoverBorderWidth: 2,
-            data: [5, 10, 15, 20, 15, 10],
+            data: [0, 10, 15, 20, 15, 10],
           },
         ],
       },

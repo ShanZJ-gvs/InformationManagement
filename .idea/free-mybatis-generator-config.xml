@@ -9,7 +9,7 @@
               <option name="comment" value="true" />
               <option name="daoMvnPath" value="src/main/java" />
               <option name="daoName" value="FangchanDao" />
-              <option name="daoPackage" value="com.gvssimux.dao" />
+              <option name="daoPackage" value="com.gvssimux.config" />
               <option name="daoPostfix" value="Dao" />
               <option name="modelMvnPath" value="src/main/java" />
               <option name="modelName" value="Fangchan" />
@@ -56,12 +56,12 @@
             <Config>
               <option name="comment" value="true" />
               <option name="daoMvnPath" value="src/main/java" />
-              <option name="daoName" value="UserLoginDao" />
-              <option name="daoPackage" value="com.gvssimux.dao" />
+              <option name="daoName" value="UserDao" />
+              <option name="daoPackage" value="com.gvssimux.config" />
               <option name="daoPostfix" value="Dao" />
               <option name="modelMvnPath" value="src/main/java" />
-              <option name="modelName" value="UserLogin" />
-              <option name="modelPackage" value="com.gvssimux.pojo.login" />
+              <option name="modelName" value="User" />
+              <option name="modelPackage" value="com.gvssimux.config" />
               <option name="name" value="user" />
               <option name="needToStringHashcodeEquals" value="true" />
               <option name="overrideJava" value="true" />

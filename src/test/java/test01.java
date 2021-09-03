@@ -10,14 +10,14 @@ import java.util.List;
 
 public class test01 {
 
-    //根据uname查询User
+    //根据uname和uuid查询User
     @Test
     public void tt(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserServiceImpl mapper = context.getBean("UserServiceImpl", UserServiceImpl.class);
 
 
-        System.out.println(mapper.selectAllUser("单子健"));
+        System.out.println(mapper.selectAllUser("单子健","3402000"));
         System.out.println(1111);
         System.out.println("根据uname查询User");
     }
