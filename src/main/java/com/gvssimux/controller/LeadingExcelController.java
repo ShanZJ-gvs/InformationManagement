@@ -106,17 +106,21 @@ public class LeadingExcelController {
             System.out.println("打印信息-->"+333);
             Fangchan fangchan = new Fangchan();
             System.out.println("打印信息-->"+444);
-            if (!lo.get(0).equals(null)&& lo.get(0)!=null&&lo.get(0)!="") {
+            /*前三列不加判空的原因是：在获取数据流是，前三列就不能为空，
+            * 不知道为什么，可能是我copy的代码中，在获取数据流时，就设置了前三列不可为空
+            * */
+            //if (!lo.get(0).equals(null)&& lo.get(0)!=null&&lo.get(0)!="") {
                 fangchan.setFid(String.valueOf(lo.get(0)));
-            }
+            //}
             System.out.println("打印信息-->"+555);
-            if (!lo.get(1).equals(null)&& lo.get(1)!=null&&lo.get(1)!="") {
+            //if (!lo.get(1).equals(null)&& lo.get(1)!=null&&lo.get(1)!="") {
                 fangchan.setUid(String.valueOf(lo.get(1)));
-            }
+            //}
             System.out.println("打印信息-->"+666);
-            if (!lo.get(2).equals(null)&& lo.get(2)!=null&&lo.get(2)!="") {
+            //if (!lo.get(2).equals(null)&& lo.get(2)!=null&&lo.get(2)!="") {
+                System.out.println(111);
                 fangchan.setFname(String.valueOf(lo.get(2)));
-            }
+            //}
             System.out.println("打印信息-->"+777);
             if (!lo.get(3).equals(null)&& lo.get(3)!=null&&lo.get(3)!="") {
                 fangchan.setFaddress(String.valueOf(lo.get(3)));
