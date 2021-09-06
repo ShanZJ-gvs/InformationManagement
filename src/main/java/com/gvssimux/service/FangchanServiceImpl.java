@@ -28,9 +28,15 @@ public class FangchanServiceImpl implements FangchanService{
         return mapper.selectAllFanchan(fid);
     }
 
+    //根据fid查询房产信息
+    public List<Fangchan> selectAllF(){
+        return mapper.selectAllF();
+    }
+
     public List<Fangchan> getLikeFanchanByAddress(String faddress){
         return mapper.getLikeFanchanByAddress(faddress);
     }
+
 
 
 

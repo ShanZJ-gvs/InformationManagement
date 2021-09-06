@@ -32,7 +32,8 @@ public class ExcleController {
                 e1.printStackTrace();
             }
 
-            String[] titles = { "用户id", "用户姓名", "用户密码", "用户年龄" };
+            //String[] titles = { "用户id", "用户姓名", "用户密码", "用户年龄" };
+            String[] titles = { "fid", "uid", "fname", "faddress","ispay","isloans","fcost","farea1","farea2" };
             excleImpl.export(titles, out);
             return "success";
         } catch(Exception e){

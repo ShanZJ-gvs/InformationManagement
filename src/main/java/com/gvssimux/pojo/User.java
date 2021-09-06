@@ -45,4 +45,15 @@ public class User implements Serializable {
     private Integer tid;
 
     private static final long serialVersionUID = 1L;
+
+    public User(String uid) {
+        this.uid = uid;
+    }
+
+    public User(String uid, String uuid, String uname, String fid) {
+        this.uid = uid;
+        this.uuid = uuid;
+        this.uname = uname;
+        this.fid = fid;
+    }
 }

@@ -49,13 +49,15 @@ public class FanChanController {
      */
     @ResponseBody
     @RequestMapping("/fanchanform")
-    public void changeBook(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+    public String changeBook(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         FangchanServiceImpl FangchanServiceImpl = context.getBean("FangchanServiceImpl", FangchanServiceImpl.class);
         JsonUtil jsonUtil = new JsonUtil();
         //随机生成id
-        String fid = String.valueOf(UUID.randomUUID());
-        String uid = String.valueOf(UUID.randomUUID());
+//        String fid = String.valueOf(UUID.randomUUID());
+//        String uid = String.valueOf(UUID.randomUUID());
+        String fid = "gvs";
+        String uid = "uid333";
         //创建接收对象
         Fangchan object = new Fangchan();
 //        设置默认属性，方便在数据库中查看哪错了
@@ -71,19 +73,29 @@ public class FanChanController {
 
         UserServiceImpl mapper = context.getBean("UserServiceImpl", UserServiceImpl.class);
         //根据uname和uuid查询User
+        System.out.println("eeee---");
         if (request.getParameter("uname")!="" &&
-                request.getParameter("uuid")!=""){
+                request.getParameter("uname")!=null&&
+                request.getParameter("uuid")!=""&&
+                request.getParameter("uuid")!=null){
+            System.out.println("eeee");
             String uname = request.getParameter("uname");
+            System.out.println(uname);
             String uuid = request.getParameter("uuid");
+            System.out.println(uuid);
             List<User> users = mapper.selectAllUser(uname,uuid);
-            if (users!=null){
+            System.out.println(users.toString());
+            if (!users.isEmpty()){
                 uid = users.get(0).getUid();
             }
+            System.out.println("eeee");
             //**uname和uuid有值，但是没有查到这个人，那么插入*//
-
+            User user = new User(uid,uuid,uname,fid);
+            System.out.println("eeee");
+            mapper.insertSelective(user);
 
             //***************************************//
-            System.out.println(users.toString());
+            //System.out.println(users.toString());
         }
 
 
@@ -133,6 +145,7 @@ public class FanChanController {
 //        往user表中插入数据
 
 
+        return "成功插入";
 
     }
 

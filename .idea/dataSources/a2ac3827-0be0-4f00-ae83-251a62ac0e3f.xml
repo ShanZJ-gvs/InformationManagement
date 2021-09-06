@@ -1164,6 +1164,7 @@ SELECT|sys.sys_config
       <Comment>自增ID</Comment>
       <DataType>int(200)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="321" parent="242" name="uid">
       <Position>2</Position>

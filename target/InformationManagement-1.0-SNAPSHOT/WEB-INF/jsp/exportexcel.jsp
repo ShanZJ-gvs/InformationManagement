@@ -12,7 +12,7 @@
 <!-- 正常数据导出肯定要传入参数，我这里没有用ajax传参，简单用链接传参 -->
 <script type="text/javascript">
     function download(){
-        var url="download_excel?id=10&name=张三";
+        var url="download_excel?id=10&name=房产信息";
         window.open(url);
     }
 </script>

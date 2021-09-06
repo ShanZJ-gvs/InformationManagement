@@ -40,11 +40,22 @@
         <property name="order" value="2" />
     </bean>
 
+<!--  上传文件的视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
         <!-- 这个属性指定了，只有controller返回的路径是以excel开头时，才使用该视图解析器-->
         <property name="viewNames" value="leadingexcel"/>
+        <!--优先级越小，优先级越高-->
+        <property name="order" value="1" />
+    </bean>
+
+    <!--  下载文件的视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <!-- 这个属性指定了，只有controller返回的路径是以excel开头时，才使用该视图解析器-->
+        <property name="viewNames" value="exportexcel"/>
         <!--优先级越小，优先级越高-->
         <property name="order" value="1" />
     </bean>

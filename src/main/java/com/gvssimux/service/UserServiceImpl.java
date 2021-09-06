@@ -9,9 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService{
+
     private UserDao mapper;
     private FangchanDao FDao;
 
+    public int insertSelective(User record){
+        return mapper.insertSelective(record);
+    }
 
     @Override
     public List<User> selectAllUser(String uname,String uuid) {

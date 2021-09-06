@@ -17,6 +17,9 @@ public interface FangchanService {
     //根据fid查询房产信息
     List<Fangchan> selectAllFanchan(String fid);
 
+    //根据fid查询房产信息
+    List<Fangchan> selectAllF();
+
     //根据房屋地址名模糊查询房产
     List<Fangchan> getLikeFanchanByAddress(String faddress);
 

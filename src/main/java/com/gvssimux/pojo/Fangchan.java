@@ -1,13 +1,18 @@
 package com.gvssimux.pojo;
 
 import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * fangchan
  * @author 
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Fangchan implements Serializable {
     /**
      * 自增id
@@ -60,4 +65,14 @@ public class Fangchan implements Serializable {
     private Double farea2;
 
     private static final long serialVersionUID = 1L;
+
+    public Fangchan(String fid, String uid, String fname, String faddress, Double fcost, Double farea1, Double farea2) {
+        this.fid = fid;
+        this.uid = uid;
+        this.fname = fname;
+        this.faddress = faddress;
+        this.fcost = fcost;
+        this.farea1 = farea1;
+        this.farea2 = farea2;
+    }
 }

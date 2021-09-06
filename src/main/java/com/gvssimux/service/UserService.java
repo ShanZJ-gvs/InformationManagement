@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface UserService {
 
+    int insertSelective(User record);
+
     //根据uname和uuid查询用户
     List<User> selectAllUser(String uname,String uuid);
 

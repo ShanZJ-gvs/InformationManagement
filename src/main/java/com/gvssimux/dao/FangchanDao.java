@@ -30,6 +30,10 @@ public interface FangchanDao {
     @Select("select * from jijianxiecha.fangchan where fid=#{a}")
     List<Fangchan> selectAllFanchan(@Param("a") String fid);
 
+    //根据fid查询房产信息
+    @Select("select * from jijianxiecha.fangchan")
+    List<Fangchan> selectAllF();
+
     //根据房屋地址名模糊查询房产
     @Select("select * from jijianxiecha.fangchan where faddress LIKE CONCAT('%',#{b},'%') ")
     List<Fangchan> getLikeFanchanByAddress(@Param("b") String faddress);
