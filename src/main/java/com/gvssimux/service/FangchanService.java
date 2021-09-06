@@ -11,6 +11,9 @@ public interface FangchanService {
     //部分插入
     int insertSelective(Fangchan record);
 
+   /* //部分插入--数据集
+    int insertSelective2(List<Fangchan> record);*/
+
     //单个查询
     Fangchan getFByFid(String fid);
 

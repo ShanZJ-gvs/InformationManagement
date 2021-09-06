@@ -44,8 +44,8 @@ public class ImportExcelUtil {
             sheet = work.getSheetAt(i);
             if(sheet==null){continue;}
 
-            //遍历当前sheet中的所有行
-            for (int j = sheet.getFirstRowNum(); j < sheet.getLastRowNum(); j++) {
+            //遍历当前sheet中的所有行   博客demo中的是j < sheet.getLastRowNum() 实测少一行
+            for (int j = sheet.getFirstRowNum(); j < sheet.getLastRowNum()+1; j++) {
                 row = sheet.getRow(j);
                 if(row==null||row.getFirstCellNum()==j){continue;}
 

@@ -7,6 +7,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.gvssimux.pojo.Fangchan;
+import com.gvssimux.service.FangchanServiceImpl;
+import com.gvssimux.service.UserServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
@@ -73,7 +78,9 @@ public class LeadingExcelController {
 
         System.out.println("执行==》LeadingExcelController.java ==>upajax");
 
-        //该处可调用service相应方法进行数据保存到数据库中，现只对数据输出
+
+/**         //博客demo
+         //该处可调用service相应方法进行数据保存到数据库中，现只对数据输出
         for (int i = 0; i < listob.size(); i++) {
             List<Object> lo = listob.get(i);
             Family family = new Family();
@@ -83,7 +90,69 @@ public class LeadingExcelController {
             family.setBz(String.valueOf(lo.get(3)));
 
             System.out.println("打印信息-->"+family.toString());
+            System.out.println("listob.size()==>"+listob.size());
+        }*/
+
+
+      //自己写的demo
+        //创建数据库工厂
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        FangchanServiceImpl mapper = context.getBean("FangchanServiceImpl", FangchanServiceImpl.class);
+        //该处可调用service相应方法进行数据保存到数据库中，现只对数据输出
+        System.out.println("打印信息-->"+111);
+        for (int i = 0; i < listob.size(); i++) {
+            System.out.println("打印信息-->"+222);
+            List<Object> lo = listob.get(i);
+            System.out.println("打印信息-->"+333);
+            Fangchan fangchan = new Fangchan();
+            System.out.println("打印信息-->"+444);
+            if (!lo.get(0).equals(null)&& lo.get(0)!=null&&lo.get(0)!="") {
+                fangchan.setFid(String.valueOf(lo.get(0)));
+            }
+            System.out.println("打印信息-->"+555);
+            if (!lo.get(1).equals(null)&& lo.get(1)!=null&&lo.get(1)!="") {
+                fangchan.setUid(String.valueOf(lo.get(1)));
+            }
+            System.out.println("打印信息-->"+666);
+            if (!lo.get(2).equals(null)&& lo.get(2)!=null&&lo.get(2)!="") {
+                fangchan.setFname(String.valueOf(lo.get(2)));
+            }
+            System.out.println("打印信息-->"+777);
+            if (!lo.get(3).equals(null)&& lo.get(3)!=null&&lo.get(3)!="") {
+                fangchan.setFaddress(String.valueOf(lo.get(3)));
+            }
+            System.out.println("打印信息-->"+888);
+            if (!lo.get(4).equals(null)&& lo.get(4)!=null&&lo.get(4)!="") {
+                fangchan.setIspay(Integer.parseInt((String) lo.get(4)));
+            }
+            System.out.println("打印信息-->"+999);
+            if (!lo.get(5).equals(null)&& lo.get(5)!=null&&lo.get(5)!="") {
+                fangchan.setIsloans(Integer.parseInt((String) lo.get(5)));
+            }
+            System.out.println("打印信息-->"+1010);
+            if (!lo.get(6).equals(null)&& lo.get(6)!=null&&lo.get(6)!=""){
+                fangchan.setFcost(Double.parseDouble((String) lo.get(6)));
+            }
+            System.out.println("打印信息-->"+1111);
+            if (!lo.get(7).equals(null)&& lo.get(7)!=null&&lo.get(7)!=""){
+                fangchan.setFarea1(Double.parseDouble((String) lo.get(7)));
+            }
+
+            System.out.println("打印信息-->"+2222);
+            if (!lo.get(8).equals(null)&& lo.get(8)!=null&&lo.get(8)!=""){
+                fangchan.setFarea2(Double.parseDouble((String) lo.get(8)));
+            }
+
+
+            //将数据插入数据库
+            mapper.insertSelective(fangchan);
+            System.out.println("打印信息-->i="+i+" "+fangchan.toString());
+            System.out.println("listob.size()==>"+listob.size());
+
         }
+
+
+        System.out.println("打印信息-->"+1111000000);
 
         PrintWriter out = null;
         response.setCharacterEncoding("utf-8");  //防止ajax接受到的中文信息乱码

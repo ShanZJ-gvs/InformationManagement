@@ -19,6 +19,15 @@ public class FangchanServiceImpl implements FangchanService{
         return mapper.insertSelective(record);
     }
 
+    /*//部分插入--数据集
+    public int insertSelective2(List<Fangchan> records){
+        System.out.println("执行成功==》FangchanServiceImpl insertSelective2 部分插入房产--数据集合");
+        for (int i = 0; i < records.size(); i++) {
+            mapper.insertSelective(records.get(i-1));
+        }
+        return mapper.insertSelective(records.get(records.size()-1));
+    }*/
+
     //单个查询
     public Fangchan getFByFid(String fid){
         return mapper.getFByFid(fid);
